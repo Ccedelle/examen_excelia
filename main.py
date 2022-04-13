@@ -1,5 +1,6 @@
 from helpers import addition
 from bottle import route, run
+import sys
 
 
 @route("/add/<a>/<b>")
@@ -8,4 +9,4 @@ def add(a, b):
     return addition(a, b)
 
 
-run(host="localhost", port=8080, reloader=True)
+run(host="0.0.0.0", port=sys.argv[1], reloader=True)
